@@ -1,0 +1,51 @@
+.container {
+    aspect-ratio: calc(100%-4em)/(calc(100%-4em))2;
+    width: calc(100%-4em);
+    display: flex;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    background-color: hsl( var(--color-box-item), 1);
+}
+
+.infoCard {
+    width: calc(50% + 4em);
+    aspect-ratio: 3/2;
+}
+
+.description {
+    width: calc(50% - 4em);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 2em;
+    gap: 1em;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description p {
+    text-align: center;
+    font-size: var(--ff-medium);
+    /* font-size: clamp(1vw, var(--ff-medium), 1.5vw); */
+    color: hsl( var(--color-dark-gray), 1);
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 400px) {
+    .container {
+        width: calc(100%-2em);
+    }
+
+    .infoCard {
+        width: 100%;
+    }
+
+    .description {
+        width: 100%;
+    }
+}

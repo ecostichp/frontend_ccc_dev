@@ -1,0 +1,14 @@
+.navlink,
+.buttonText,
+.buttonIcon {
+    height: 100%;
+    background-color: hsl( var( --color-transparent), 0);
+}
+
+.buttonText {
+    padding: 0 1em;
+}
+
+.buttonIcon {
+    aspect-ratio: 1;
+}

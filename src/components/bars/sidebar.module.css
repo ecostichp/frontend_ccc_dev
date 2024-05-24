@@ -1,0 +1,42 @@
+.container {
+    z-index: 1001;
+    top: 0;
+    left: -100vw;
+    position: fixed;
+    width: calc(100vw - 4em);
+    height: 100vh;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(8px);
+    box-shadow: var( --shadow);
+    transition: background-color 0.5s, left 0.5s, opacity 0.3s;
+    opacity: 0;
+}
+
+.modal {
+    z-index: -999;
+    top: 4em;
+    position: fixed;
+    left: calc(-100vw + 4em);
+    width: 100vw;
+    height: calc(100vh - 4em);
+}
+
+.options:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    height: 4em;
+}
+
+.options:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    left: 0;
+    opacity: 1;
+}
+
+.modal.display {
+    left: calc(100vw - 4em);
+}

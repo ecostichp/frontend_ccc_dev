@@ -1,0 +1,66 @@
+.navbar {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2em;
+    width: 100vw;
+    height: 5em;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(6px);
+    box-shadow: var( --shadow);
+}
+
+.logo {
+    cursor: pointer;
+    position: absolute;
+    margin: 0.5em;
+    aspect-ratio: 192/64;
+    height: 4em;
+    transition: transform 0.2s, opacity 0.5s;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.options {
+    display: flex;
+}
+
+.menu {
+    display: none;
+}
+
+@media only screen and (max-width: 400px) {
+    .navbar {
+        height: 4em;
+        padding: 0 0 0 1em;
+    }
+
+    .logo {
+        height: 3em;
+    }
+
+    .options {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .logo:active {
+        transform: scale(96%);
+    }
+}
+
+@media only screen and (min-width: 401px) {
+    .logo:hover {
+        transform: scale(96%);
+    }
+}

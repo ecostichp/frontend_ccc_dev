@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.locations {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    height: auto;
+    gap: 2em;
+    margin: 2em 0;
+    padding: 2em 3em;
+}
+
+@media only screen and (max-width: 400px) {
+    .locations {
+        overflow-x: scroll;
+        height: auto;
+        gap: 2em;
+        margin: 2em 0;
+        padding: 2em 3em;
+    }
+}
+
+@media only screen and (min-width: 401px) {
+    .locations {
+        justify-content: center;
+        gap: 4em;
+        overflow: hidden;
+        padding: 2em;
+    }
+}

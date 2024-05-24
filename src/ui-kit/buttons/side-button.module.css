@@ -1,0 +1,12 @@
+.button {
+    width: 100%;
+    height: 6em;
+    padding: 0 2em;
+    background-color: hsl( var(--color-transparent), 0);
+}
+
+.button div {
+    width: 100%;
+    font-size: 1.5em;
+    text-align: center;
+}

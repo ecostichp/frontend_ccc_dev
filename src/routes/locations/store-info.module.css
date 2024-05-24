@@ -1,0 +1,48 @@
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    margin: 4em;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 2em;
+    text-align: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: auto;
+}
+
+.map {
+    width: 100%;
+    aspect-ratio: 1;
+    outline: none;
+}
+
+.map:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 400px) {
+    .info {
+        display: flex;
+        flex-direction: column;
+        margin: 2em;
+    }
+}

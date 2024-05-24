@@ -1,0 +1,46 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    height: 3em;
+    background-color: hsl( var(--color-light-red), 1);
+    border: none;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    color: hsl( var(--color-white), 1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.button * {
+    fill: hsl( var(--color-white), 1);
+}
+
+.button svg {
+    padding: 0;
+    height: 1.75em;
+    width: 1.75em;
+}
+
+.button div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    color: hsl( var(--color-white), 1);
+    transition: transform 0.3s;
+}
+
+
+.button:hover {
+    background-color: hsl( var(--color-light-red-focused), 1);
+}
+
+.button:hover > * {
+    transform: scale(95%);
+}
+
+.button:active {
+    transition: transform 0.05s;
+    transform: scale(95%);
+}

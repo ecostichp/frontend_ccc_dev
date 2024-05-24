@@ -1,0 +1,47 @@
+.container {
+    cursor: pointer;
+    width: 16em;
+    height: 20em;
+    box-shadow: var(--shadow);
+    background-color: hsl( var(--color-box-item), 1);
+    transition: 0.3s;
+}
+
+.container img {
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+    padding-top: 1em;
+}
+
+@media only screen and (max-width: 400px) {
+    .container:active {
+        transform: scale(102.5%);
+    }
+
+    .container:active p {
+        color:hsl( var(--color-light-red-focused), 1);
+        transition: color 0s;
+    }
+}
+
+@media only screen and (min-width: 401px) {
+    .container {
+        width: 24em;
+        height: auto;
+    }
+
+    .container:hover {
+        transform: scale(102.5%);
+    }
+
+    .container:hover p {
+        color:hsl( var(--color-light-red-focused), 1)
+    }
+}
