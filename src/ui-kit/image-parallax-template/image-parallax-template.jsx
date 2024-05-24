@@ -8,9 +8,11 @@ const ImageParallaxTemplate = ({src, className}) => {
     // Estado para la posición Y del componente en el documento
     const [divYPosition, setDivYPosition] = useState();
     // Altura del componente
-    const [imgHeight, setSelfHeight] = useState();
+    const [imgHeight, setImgHeight] = useState();
     // Velocidad de desplazamiento de la imagen
     const [verticalVelocity, setVerticalVelocity] = useState();
+    // Constante para alinear la imagen al centro en el eje Y en caso de requerirse
+    const [initTop, setInitTop] = useState(0);
     // ID para el componente
     const [selfId, setSelfId] = useState();
     // Tamaño de la pantalla de visualización del documento
@@ -30,7 +32,7 @@ const ImageParallaxTemplate = ({src, className}) => {
             // Posición Y
             setDivYPosition(document.getElementById(selfId).offsetTop);
             // Altura del elemento
-            setSelfHeight(document.getElementById(selfId).offsetHeight);
+            setImgHeight(document.getElementById(selfId).offsetHeight);
         }, [selfId]
     )
 
@@ -38,8 +40,6 @@ const ImageParallaxTemplate = ({src, className}) => {
     useEffect(
         () => {
             if (!selfId || !imgHeight) return;
-            // Inicialización del valor de velocidad
-            let value = 0.5;
 
             // Altura remanente de la imagen
             const remHeight = imgHeight/3
@@ -48,16 +48,24 @@ const ImageParallaxTemplate = ({src, className}) => {
             const divHeight = remHeight*2
 
             // Altura no utilizada por el contenedor div
-            const remVH = vh - divHeight 
+            const remVH = vh - divHeight
+
+            // marginTop 
+            const imgVertM = remHeight / 2
             
             // Comparación de la altura de la imagen con la altura de la ventana del navegador
             if (imgHeight <= vh){
                 // Si la altura de la imagen no es mayor a la altura de la ventana del navegador
-                value = remHeight / remVH;
+                setVerticalVelocity(remHeight / remVH);
+            } else {
+                // Valor de desplazamiento por defecto
+                setVerticalVelocity(0.5);
+                // Se resta el margen superior
+                setInitTop(imgVertM);
             }
 
             // Se establece la velocidad vertical en el valor calculado
-            setVerticalVelocity(value);
+            
         }, [selfId, imgHeight, vh]
     )
 
@@ -66,8 +74,8 @@ const ImageParallaxTemplate = ({src, className}) => {
         () => {
             if (!divYPosition || !verticalVelocity) return;
 
-            setImgTop(-(divYPosition*verticalVelocity))
-        }, [divYPosition, verticalVelocity]
+            setImgTop(-(divYPosition*verticalVelocity)-initTop)
+        }, [divYPosition, verticalVelocity, initTop]
     )
 
     // Efecto para establecer la posición inicial del paralaje de la imagen
@@ -83,13 +91,13 @@ const ImageParallaxTemplate = ({src, className}) => {
                 const offsetTop = -(divYPosition*verticalVelocity)
 
                 // Cambio dinámico de posición de la imagen
-                setImgTop(offsetTop + (scroll*verticalVelocity));
+                setImgTop(offsetTop + (scroll*verticalVelocity) - initTop);
             })
 
             return (
                 () => {window.removeEventListener("scroll", function(){})}
             );
-        }, [selfId, divYPosition, vh, imgHeight, verticalVelocity]
+        }, [selfId, divYPosition, vh, imgHeight, verticalVelocity, initTop]
     )
 
     return (

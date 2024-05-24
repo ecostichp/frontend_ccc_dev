@@ -188,7 +188,7 @@ useEffect(
 >   ### Altura de la ventana del navegador mayor a la altura de la imagen
 >   - El cálculo de la velocidad de desplazamiento toma el valor sobrante de la altura del elemento `img` dentro del elemento `div` contenedor (es decir, 50% del 150% o $ \frac{1}{3} $) dividido entre el rango vertical de la ventana del navegador no utilizado por el componente (es decir, la altura de la ventana del navegador menos la altura del componente).
 >   
->   $$ \frac{\left(\frac{\text{Altura de la imagen}}{3}\right)}{\left[\text{Altura de ventana de navegador}×\left(2\frac{(\text{Altura de la imagen})}{3}\right)\right]} $$
+>   $$ \frac{\left(\frac{\text{Altura de la imagen}}{3}\right)}{\left[\text{Altura de ventana de navegador}-\left(2\frac{(\text{Altura de la imagen})}{3}\right)\right]} $$
 >   
 >   $$ \frac{\left(\frac{selfHeight}{3}\right)}{\left[vh-\left(2\frac{(selfHeight)}{3}\right)\right]} $$
 
