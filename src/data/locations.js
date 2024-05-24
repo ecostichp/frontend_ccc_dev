@@ -7,6 +7,7 @@ const locations = [
         address: "Prolongación Leona Vicario S/N Col. Lagunitas 1, 23462 Cabo San Lucas, Baja California Sur",
         businessHours: "Lunes a Sábado 8:00 a.m. - 6:00 p.m.",
         whatsapp: "+52 1 624 204 1786",
+        whatsappURL: "https://wa.me/message/7S6LVGJBSFXMD1",
         phones: [
             "624 146 8425",
             "624 204 1786",
@@ -20,6 +21,7 @@ const locations = [
         address: "Carretera Transpeninsular San José - La Paz, Col. Guaymitas, 23407 San José del Cabo, Baja California Sur",
         businessHours: "Lunes a Sábado 8:00 a.m. - 6:00 p.m.",
         whatsapp: "+52 1 624 204 1781",
+        whatsappURL: "https://wa.me/message/XNZO53GGNLPKA1",
         phones: [
             "624 142 6600",
             "624 204 1781",

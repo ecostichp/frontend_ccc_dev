@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import style from './button.module.css';
 
-const LinkButton = ({icon, text, link}) => {
+const LinkButton = ({icon, text, link, target= "_self"}) => {
 
     const { pathname } = useLocation();
     
@@ -10,7 +10,7 @@ const LinkButton = ({icon, text, link}) => {
     }
     
     return (
-        <NavLink to={link}>
+        <NavLink to={link} target={target}>
             <button className={style.button}>
                 <div>{icon ? <div>{icon}</div> : ""}{text} </div>
             </button>

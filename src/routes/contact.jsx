@@ -18,7 +18,7 @@ const Contact = () => {
                 <div>
                     <h2>Atención al cliente</h2>
                     <p>{contact.email}</p>
-                    <LinkButton icon={<IconEmail />} text={contact.email} link={`mailto:${contact.email}`} />
+                    <LinkButton icon={<IconEmail />} text={"Enviar correo"} link={`mailto:${contact.email}`} />
                 </div>
                 {
                     locations.map(
@@ -39,8 +39,8 @@ const Contact = () => {
                                 <p>WhatsApp: {location.whatsapp}</p>
                                 <div className={style.buttons}>
                                     <LinkButton icon={<IconPhone />} text={location.phones[0]} link={`tel:${location.phones[0]}`} />
-                                    <LinkButton icon={<IconCellphone />} text={location.phones[0]} link={`tel:${location.phones[1]}`} />
-                                    <LinkButton icon={<IconWhatsApp />} text={"WhatsApp"} />
+                                    <LinkButton icon={<IconCellphone />} text={location.phones[1]} link={`tel:${location.phones[1]}`} />
+                                    <LinkButton icon={<IconWhatsApp />} text={"WhatsApp"} link={location.whatsappURL} target="_blank" />
                                 </div>
                             </div>
                         )

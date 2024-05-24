@@ -32,8 +32,8 @@ const StoreInfo = () => {
                     </div>
                     <div className={style.buttons}>
                     <LinkButton icon={<IconPhone />} text={location.phones[0]} link={`tel:${location.phones[0]}`} />
-                    <LinkButton icon={<IconCellphone />} text={location.phones[0]} link={`tel:${location.phones[1]}`} />
-                        <LinkButton icon={<IconWhatsApp />} text={"WhatsApp"} />
+                    <LinkButton icon={<IconCellphone />} text={location.phones[1]} link={`tel:${location.phones[1]}`} />
+                    <LinkButton icon={<IconWhatsApp />} text={"WhatsApp"} link={location.whatsappURL} target="_blank" />
                     </div>
                 </div>
                 <iframe className={style.map}
