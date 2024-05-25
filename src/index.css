@@ -156,6 +156,11 @@ iframe {
     box-shadow: var(--shadow);
 }
 
+.nav-logo-color,
+.nav-logo-white {
+    transition: transform 0.2s, opacity 0.5s;
+}
+
 .nav-logo-color {
     z-index: 1;
 }

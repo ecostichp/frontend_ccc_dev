@@ -19,7 +19,6 @@
     margin: 0.5em;
     aspect-ratio: 192/64;
     height: 4em;
-    transition: transform 0.2s, opacity 0.5s;
 }
 
 .menu {

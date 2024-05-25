@@ -6,6 +6,13 @@
 }
 
 .logo {
+    position: absolute;
     width: 40em;
     max-width: calc(100vw - 4em);
+}
+
+.base {
+    width: 40em;
+    max-width: calc(100vw - 4em);
+    opacity: 0;
 }
