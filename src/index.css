@@ -189,7 +189,7 @@ iframe {
 } */
 
 /* VISTA MÓVIL */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     :root {
         font-size: 16px;
         --ff-large: 2.625rem;
@@ -227,7 +227,7 @@ iframe {
 }
 
 /* VISTA DE ESCRITORIO */
-@media only screen and (min-width: 401px) {
+@media only screen and (min-width: 500px) {
     button svg {
         fill: hsl( var(--color-white), 1);
     }

@@ -12,10 +12,6 @@ const InfoCards = () => {
                         <InfoCard
                             key={index}
                             className={style.card}
-                            // src={card.src}
-                            // title={card.title}
-                            // description={card.description}
-                            // button={card.button}
                             {...card}
                         />
                     )

@@ -20,7 +20,7 @@
     padding-top: 1em;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .container:active {
         transform: scale(102.5%);
     }
@@ -31,7 +31,7 @@
     }
 }
 
-@media only screen and (min-width: 401px) {
+@media only screen and (min-width: 500px) {
     .container {
         width: 24em;
         height: auto;

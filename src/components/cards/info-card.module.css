@@ -36,7 +36,7 @@
     font-weight: 300;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .container {
         width: calc(100%-2em);
     }
