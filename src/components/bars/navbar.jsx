@@ -18,19 +18,17 @@ const Navbar = () => {
                 <img className={`${style.logo} nav-logo-color`} src="logo-color.png"/>
                 <img className={`${style.logo} nav-logo-white`} src="logo-white.png"/>
             </NavLink>
-            {/* div vacío para solucionar la alineacion */}
-            <div></div>
-            <div className={style.menu}>
+            <div className={style.buttonMenu}>
                 <NavButton content={<IconMenu />} func={() => {setSidebarDisplay(!sidebarDisplay)}} />
             </div>
-            <div className={style.options}>
+            <div className={style.menu}>
                 <NavButton content={"Inicio"} link={"/"} />
                 <NavButton content={"Sucursales"} link={"/sucursales"} />
                 <NavButton content={"Contacto"} link={"/contacto"} />
                 <NavButton content={"Galería"} link={"/galería"} />
                 <NavButton content={"Sobre nosotros"} link={"/sobre-nosotros"} />
             </div>
-            <div className={style.options}>
+            <div className={style.quickAccess}>
                 <NavButton content={<IconPhone />} link={"/contacto"} />
                 <NavButton content={<IconNightMode />} func={() => setDarkMode(!darkMode)} />
             </div>
