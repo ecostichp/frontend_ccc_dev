@@ -3,7 +3,7 @@ import style from './logo-main.module.css';
 const LogoMain = () => {
 
     return (
-        <section className={style.container}>
+        <div className={style.container}>
             <img
                 className={`${style.base} nav-logo-color`}
                 src="logo-color.png"
@@ -19,7 +19,7 @@ const LogoMain = () => {
                 src="logo-white.png"
                 alt="Logo de La Casa Del Carpintero"
             />
-        </section>
+        </div>
     )
 }
 
