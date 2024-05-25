@@ -3,6 +3,12 @@
     justify-content: center;
 }
 
+.heightReference {
+    height: 100vh;
+    position: absolute;
+    opacity: 0;
+}
+
 .imageParallax {
     position: relative;
     min-width: 100%;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import style from './image-parallax-template.module.css';
 
@@ -15,8 +15,10 @@ const ImageParallaxTemplate = ({src, className}) => {
     const [initTop, setInitTop] = useState(0);
     // ID para el componente
     const [selfId, setSelfId] = useState();
-    // Tamaño de la pantalla de visualización del documento
-    const vh = window.visualViewport.height;
+    // Elemento de tamaño 100vh para tomar como referencia
+    const heightReference = useRef(null);
+    // Altura del documento
+    const [docHeight, setDocHeight] = useState(0);
 
     // Efecto para asignar la ID al componente
     useEffect(
@@ -33,6 +35,9 @@ const ImageParallaxTemplate = ({src, className}) => {
             setDivYPosition(document.getElementById(selfId).offsetTop);
             // Altura del elemento
             setImgHeight(document.getElementById(selfId).offsetHeight);
+
+            // Altura de la ventana
+            setDocHeight(heightReference.current.offsetHeight+1);
         }, [selfId]
     )
 
@@ -48,13 +53,13 @@ const ImageParallaxTemplate = ({src, className}) => {
             const divHeight = remHeight*2
 
             // Altura no utilizada por el contenedor div
-            const remVH = vh - divHeight
+            const remVH = docHeight - divHeight
 
             // marginTop 
             const imgVertM = remHeight / 2
             
             // Comparación de la altura de la imagen con la altura de la ventana del navegador
-            if (imgHeight <= vh){
+            if (imgHeight <= docHeight){
                 // Si la altura de la imagen no es mayor a la altura de la ventana del navegador
                 setVerticalVelocity(remHeight / remVH);
             } else {
@@ -66,7 +71,7 @@ const ImageParallaxTemplate = ({src, className}) => {
 
             // Se establece la velocidad vertical en el valor calculado
             
-        }, [selfId, imgHeight, vh]
+        }, [selfId, imgHeight, docHeight]
     )
 
     // Efecto para calcular la posición inicial de la imagen dentro del contenedor
@@ -97,7 +102,7 @@ const ImageParallaxTemplate = ({src, className}) => {
             return (
                 () => {window.removeEventListener("scroll", function(){})}
             );
-        }, [selfId, divYPosition, vh, imgHeight, verticalVelocity, initTop]
+        }, [selfId, divYPosition, imgHeight, verticalVelocity, initTop]
     )
 
     return (
@@ -106,6 +111,7 @@ const ImageParallaxTemplate = ({src, className}) => {
             // Se asigna la clase 'container' del módulo CSS y la clase provista en el uso del componente.
             className={`${style.container} ${className}`}
         >
+            <div ref={heightReference} className={style.heightReference}>{docHeight}</div>
             {/* Imagen con efecto de paralaje */}
             <img
                 // Se asigna la clase 'imageParallax' del módulo CSS
