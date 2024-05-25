@@ -22,11 +22,6 @@
     transition: transform 0.2s, opacity 0.5s;
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
 .menu {
     display: flex;
     justify-self: center;
@@ -41,9 +36,13 @@
     display: none;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         height: 4em;
+        width: 100%;
         padding: 0 0 0 1em;
     }
 
@@ -51,11 +50,12 @@
         height: 3em;
     }
 
-    .options {
+    .menu,
+    .quickAccess {
         display: none;
     }
 
-    .menu {
+    .buttonMenu {
         display: flex;
     }
 
@@ -64,7 +64,7 @@
     }
 }
 
-@media only screen and (min-width: 401px) {
+@media only screen and (min-width: 500px) {
     .logo:hover {
         transform: scale(96%);
     }
