@@ -57,7 +57,7 @@ svg {
     
     /* COLORES DE MODO */
     --color-box-item: 0, 0%, 100%;
-    --color-dark-mode: 0, 0%, 12%;
+    --color-dark-mode: 240, 6%, 16%;
     --color-bg: var( --color-white);
     --color-text: var(--color-black);
 
@@ -92,13 +92,13 @@ body {
 
 /* MODO OSCURO */
 body.dark-mode {
-    background-color: hsl( 0, 0%, 8%, 1);
+    background-color: hsl( 240, 6%, 12%, 1);
 
     --color-bg: var( --color-dark-mode);
     --color-text: var( --color-white);
-    --color-box-item: 0, 0%, 16%;
-    --color-light-red: 353, 100%, 58%;
-    --color-light-red-focused: 353, 100%, 65%;
+    --color-box-item: 240, 6%, 20%;
+    --color-light-red: 353, 95%, 62%;
+    --color-light-red-focused: 353, 100%, 67.5%;
     --color-dark-gray: 0, 0%, 75%;
 
     --nav-bg: hsl( var(--color-dark-mode), 0.85);
