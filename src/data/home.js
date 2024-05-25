@@ -7,7 +7,7 @@ export const cardsInfo = [
         link: "/sobre-nosotros"
     },
     {
-        src: "csl.jpg",
+        src: "productos.jpg",
         title: "Nuestros productos",
         description: "Ofrecemos una amplia selección de productos de alta calidad para satisfacer todas tus necesidades. Desde herramientas manuales, pasando por materiales de construcción y accesorios para el hogar hasta maquinaria especializada.",
         button: "Explorar",
