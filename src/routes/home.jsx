@@ -17,7 +17,7 @@ const Home = () => {
             <BannerParallax src={"banner.jpg"} index={10}/>
             <BrandRibbon />
             <InfoCards />
-            <section className={style.main}>
+            <section className={style.bottom}>
                 <LogoMain />
                 <h1>Somos tu mejor opción en ferretería y carpintería.</h1>
                 <LinkButton text={"Cotiza con nosotros"} link={"/contacto"} />
