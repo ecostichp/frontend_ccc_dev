@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import style from './image-parallax-template.module.css';
 
 const ImageParallaxTemplate = ({src, className}) => {
@@ -14,27 +13,20 @@ const ImageParallaxTemplate = ({src, className}) => {
     // Constante para alinear la imagen al centro en el eje Y en caso de requerirse
     const [initTop, setInitTop] = useState(0);
     // ID para el componente
-    const [selfId, setSelfId] = useState();
+    const selfId = useRef(null);
     // Elemento de tamaño 100vh para tomar como referencia
     const heightReference = useRef(null);
     // Altura del documento
     const [docHeight, setDocHeight] = useState(0);
-
-    // Efecto para asignar la ID al componente
-    useEffect(
-        () => {
-            setSelfId(uuidv4());
-        }, []
-    )
 
     // Efecto para obtener la posición Y y altura del elemento tras la renderización
     useEffect(
         () => {
             if (!selfId) return;
             // Posición Y
-            setDivYPosition(document.getElementById(selfId).offsetTop);
+            setDivYPosition(selfId.current.offsetTop);
             // Altura del elemento
-            setImgHeight(document.getElementById(selfId).offsetHeight);
+            setImgHeight(selfId.current.offsetHeight);
 
             // Altura de la ventana
             setDocHeight(heightReference.current.offsetHeight+1);
@@ -59,7 +51,7 @@ const ImageParallaxTemplate = ({src, className}) => {
             const imgVertM = remHeight / 2
             
             // Comparación de la altura de la imagen con la altura de la ventana del navegador
-            if (imgHeight <= docHeight){
+            if (imgHeight * 1.25 <= docHeight){
                 // Si la altura de la imagen no es mayor a la altura de la ventana del navegador
                 setVerticalVelocity(remHeight / remVH);
             } else {
@@ -111,9 +103,10 @@ const ImageParallaxTemplate = ({src, className}) => {
             // Se asigna la clase 'container' del módulo CSS y la clase provista en el uso del componente.
             className={`${style.container} ${className}`}
         >
-            <div ref={heightReference} className={style.heightReference}>{docHeight}</div>
+            <div ref={heightReference} className={style.heightReference}></div>
             {/* Imagen con efecto de paralaje */}
             <img
+                ref={selfId}
                 // Se asigna la clase 'imageParallax' del módulo CSS
                 className={style.imageParallax}
                 // ID única provista por useEffect
