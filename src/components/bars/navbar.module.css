@@ -63,6 +63,29 @@
     }
 }
 
+@media only screen and (max-width: 900px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 0 0 1em;
+    }
+
+    .menu,
+    .quickAccess {
+        display: none;
+    }
+
+    .buttonMenu {
+        display: flex;
+    }
+
+    .logo:active {
+        transform: scale(96%);
+    }
+}
+
 @media only screen and (min-width: 500px) {
     .logo:hover {
         transform: scale(96%);
