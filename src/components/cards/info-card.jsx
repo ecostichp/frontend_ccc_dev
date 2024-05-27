@@ -9,8 +9,8 @@ const InfoCard = ({src, title, description, button, className, link}) => {
             <ImageParallaxTemplate src={src} className={style.infoCard} />
             <div className={style.description}>
                 <div className={style.info}>
-                    <h3>{title}</h3>
-                    <p>
+                    <h2 className="fc-red fw-400">{title}</h2>
+                    <p className="fc-gray">
                         {description}
                     </p>
                 </div>

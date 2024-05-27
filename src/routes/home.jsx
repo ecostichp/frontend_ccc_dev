@@ -11,7 +11,7 @@ const Home = () => {
         <main>
             <section className={style.main}>
                 <h1>Tu experto en carpintería.</h1>
-                <h2>Explora nuestras sucursales y encuentra la más cercana a ti.</h2>
+                <h2 className="fc-gray fw-00">Explora nuestras sucursales y encuentra la más cercana a ti.</h2>
                 <LinkButton text={"Ubícanos"} link={"sucursales"} />
             </section>
             <BannerParallax src={"banner.jpg"} index={10}/>

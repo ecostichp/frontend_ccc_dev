@@ -30,9 +30,7 @@
 
 .description p {
     text-align: center;
-    font-size: var(--ff-medium);
-    /* font-size: clamp(1vw, var(--ff-medium), 1.5vw); */
-    color: var(--color-gray);
+    font-size: var(--ff-400);
     font-weight: 300;
 }
 

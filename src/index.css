@@ -20,6 +20,7 @@ svg {
     margin: 0;
     padding: 0;
     border: 0;
+    font-weight: 300;
 }
 
 img,
@@ -105,9 +106,56 @@ body.dark-mode {
 
 /* MEDIDAS PREESTABLECIDAS DE TAMAÑOS DE FUENTE */
 body {
-    --ff-large: 4rem;
-    --ff-medium-large: 2rem;
-    --ff-medium: 1.25rem;
+    --ff-900: 4rem;
+    --ff-600: 2rem;
+    --ff-500: 1.625rem;
+    --ff-400: 1.25rem;
+    --ff-300: 1.125rem;
+}
+
+/* ------------------------------------------- */
+/* --------------- UTILIDADES ---------------- */
+/* ------------------------------------------- */
+/* COLORES */
+.fc-red {
+    color: var( --color-red);
+}
+.fc-light-red {
+    color: var( --color-light-red);
+}
+.fc-gray {
+    color: var( --color-gray);
+}
+
+/* TAMAÑOS DE FUENTE */
+.fs-900 {
+    font-size: var(--ff-900);
+}
+.fs-600 {
+    font-size: var(--ff-600);
+}
+.fs-500 {
+    font-size: var(--ff-500);
+}
+.fs-400 {
+    font-size: var(--ff-400);
+}
+.fs-300 {
+    font-size: var(--ff-300);
+}
+
+/* PESOS DE FUENTE */
+.fw-700 {
+    font-weight: 700;
+}
+.fw-600 {
+    font-weight: 600;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-400 {
+    font-weight: 400;
 }
 
 /* ------------------------------------------- */
@@ -143,19 +191,18 @@ body * {
 }
 
 h1 {
-    font-size: var(--ff-large);
+    font-size: var(--ff-900);
+    font-weight: 700;
 }
 
 h2 {
-    font-size: var(--ff-medium-large);
-    color: var(--color-gray);
+    font-size: var(--ff-600);
     font-weight: 400;
 }
 
 h3 {
-    font-size: var(--ff-medium-large);
+    font-size: var(--ff-500);
     font-weight: 400;
-    color: var(--color-red);
 }
 
 main {
@@ -172,7 +219,9 @@ section {
     align-items: center;
 }
 
-section > h1 {
+section > h1,
+section > h2,
+section > h3 {
     text-align: center;
 }
 
@@ -209,28 +258,27 @@ iframe {
     opacity: 1;
 }
 
-/* revisar */
-.url {
-    color: var( --color-red);
-    text-decoration: underline;
-    gap: 0.5rem;
-}
+/* ------------------------------------------- */
+/* ------- ADAPTACIÓN A DISPOSITIVOS --------- */
+/* ------------------------------------------- */
+/* Interacción móvil */
+@media only screen and (max-width: 500px) {
+    body {
+        --ff-900: 2.625rem;
+        --ff-600: 1.5rem;
+        --ff-400: 1.125rem;
+    }
 
-/* VISTA MÓVIL */
-@media only screen and (max-width: 900px) {
     body.body-overflow-y {
         overflow-y: hidden;
     }
 
-    section > h1 {
-        padding: 0 1rem;
-    }
-
     section > h2 {
-        padding: 0 3rem;
+        padding: 0 4.5rem;
     }
 
     .bar-button {
+        font-size: 1.5rem;
         transition: background-color 0.5s;
     }
 
@@ -251,30 +299,10 @@ iframe {
     }
 }
 
-/* VISTA DE ESCRITORIO */
-@media only screen and (max-width: 900px) {
-    :root {
-        font-size: 16px;
-        --ff-large: 2.625rem;
-        --ff-medium-large: 1.125rem;
-        --ff-medium: 1rem;
-    }
-}
-
+/* Interacción de escritorio */
 @media only screen and (min-width: 500px) {
-    button svg {
-        fill: var(--color-white);
-    }
-
-    section > h1 {
-        padding: 0 2rem;
-    }
-
-    section > h2 {
-        padding: 0 6rem;
-    }
-
     .bar-button {
+        height: 4rem;
         transition: background-color 0.5s;
     }
 
@@ -290,5 +318,40 @@ iframe {
         color: var(--color-white);
         fill: var(--color-white);
         transform: scale(96%);
+    }
+}
+
+/* Redimensionamiento desde pantallas pequeñas */
+@media only screen and (min-width: 750px) {
+    section > h1 {
+        padding: 0 4rem;
+    }
+
+    section > h2 {
+        padding: 0 8rem;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    section > h1 {
+        padding: 0 8rem;
+    }
+
+    section > h2 {
+        padding: 0 12rem;
+    }
+}
+
+@media only screen and (min-width: 1020px) {
+    .bar-button {
+        font-size: var(--ff-300);
+    }
+
+    section > h1 {
+        padding: 0 4rem;
+    }
+
+    section > h2 {
+        padding: 0 16rem;
     }
 }
