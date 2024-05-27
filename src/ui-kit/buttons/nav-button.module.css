@@ -2,7 +2,7 @@
 .buttonText,
 .buttonIcon {
     height: 100%;
-    background-color: hsl( var( --color-transparent), 0);
+    background-color: var( --color-transparent);
 }
 
 .buttonText {

@@ -3,7 +3,7 @@
     width: 16em;
     height: 20em;
     box-shadow: var(--shadow);
-    background-color: hsl( var(--color-box-item), 1);
+    background-color: var(--color-box-item);
     transition: 0.3s;
 }
 
@@ -26,7 +26,7 @@
     }
 
     .container:active p {
-        color:hsl( var(--color-light-red-focused), 1);
+        color: var(--color-light-red);
         transition: color 0s;
     }
 }
@@ -42,6 +42,6 @@
     }
 
     .container:hover p {
-        color:hsl( var(--color-light-red-focused), 1)
+        color:var(--color-light-red);
     }
 }

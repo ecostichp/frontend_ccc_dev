@@ -2,9 +2,9 @@
     aspect-ratio: calc(100%-4em)/(calc(100%-4em))2;
     width: calc(100%-4em);
     display: flex;
-    box-shadow: var(--shadow);
+    box-shadow: var( --shadow);
     overflow: hidden;
-    background-color: hsl( var(--color-box-item), 1);
+    background-color: var(--color-box-item);
 }
 
 .infoCard {
@@ -32,7 +32,7 @@
     text-align: center;
     font-size: var(--ff-medium);
     /* font-size: clamp(1vw, var(--ff-medium), 1.5vw); */
-    color: hsl( var(--color-dark-gray), 1);
+    color: var(--color-gray);
     font-weight: 300;
 }
 

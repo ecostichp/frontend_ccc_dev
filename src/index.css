@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* RESETS */
+/* ------------------------------------------- */
+/* ----------------- RESETS ------------------ */
+/* ------------------------------------------- */
 body,
 h1,
 h2,
@@ -12,7 +14,9 @@ section,
 div,
 p,
 button,
-iframe {
+iframe,
+img,
+svg {
     margin: 0;
     padding: 0;
     border: 0;
@@ -35,87 +39,107 @@ a {
     text-decoration: none;
 }
 
-svg {
-    width: 2.5em;
-    height: 2.5em;
+/* ------------------------------------------- */
+/* --------------- VARIABLES ----------------- */
+/* ------------------------------------------- */
+
+/* PALETA DE COLORES */
+:root {
+    --palette-red:          353,    100%;
+    --palette-palid-red:    353,    95%;
+    --palette-darkblue:     240,    6%;
+    --palette-grayscale:    0,      0%;
 }
 
-/* VARIABLES */
+/* COLORES */
+body {
+    --color-red:                        hsl( var( --palette-red),       50%,    1   );
+    --color-light-red:                  hsl( var( --palette-red),       56.5%,  1   );
+    --color-transparent-red:            hsl( var( --palette-red),       50%,    0.75);
+    --color-white:                      hsl( var( --palette-grayscale), 100%,   1   );
+    --color-transparent-white:          hsl( var( --palette-grayscale), 100%,   0.75);
+    --color-black:                      hsl( var( --palette-grayscale), 0%,     1   );
+    --color-transparent-black:          hsl( var( --palette-grayscale), 0%,     0.25);
+    --color-gray:                       hsl( var( --palette-grayscale), 50%,    1   );
+    --color-light-gray:                 hsl( var( --palette-grayscale), 90%,    1   );
+    --color-bluish-black:               hsl( var( --palette-darkblue),  12%,    1   );
+    --color-bluish-darker-gray:         hsl( var( --palette-darkblue),  16%,    1   );
+    --color-bluish-transparent-gray:    hsl( var( --palette-darkblue),  16%,    0.85);
+    --color-bluish-lighter-gray:        hsl( var( --palette-darkblue),  20%,    1   );
+    --color-transparent:                hsl( var( --palette-grayscale), 0%,     0   );
+
+}
+
+/* COLORES EN MODO OSCURO */
+body.dark-mode {
+    --color-red:                        hsl( var( --palette-palid-red), 62%,    1   );
+    --color-light-red:                  hsl( var( --palette-palid-red), 67.5%,  1   );
+    --color-transparent-red:            hsl( var( --palette-palid-red), 62%,    0.75);
+    --color-gray:                       hsl( var( --palette-grayscale), 75%,    1   );
+
+}
+
+/* ESTRUCTURA DE COLORES */
+body {
+    --color-bg: var( --color-white);
+    --color-text: var( --color-black);
+    --nav-bg: var(--color-transparent-white);
+    --color-box-item: var( --color-white);
+
+    --shadow: 0 0 0.75rem var( --color-transparent-black);
+    --bar-btn: var( --color-transparent-red);
+}
+
+/* ESTRUCTURA DE COLORES MODO OSCURO */
+body.dark-mode {
+    --color-bg: var( --color-bluish-darker-gray);
+    --color-text: var( --color-white);
+    --nav-bg: var(--color-bluish-transparent-gray);
+    --color-box-item: var( --color-bluish-lighter-gray);
+}
+
+/* TAMAÑOS DE FUENTE */
 :root {
     font-size: 16px;
-    /* COLORES (HSL sin valor de opacidad) */
-    --color-light-red: 353, 100%, 50%;
-    --color-light-red-focused: 353, 100%, 56.5%;
-    
-    --color-white: 0, 0%, 100%;
-    --color-black: 0, 0%, 0%;
-    
-    --color-light-gray: 0, 0%, 90%;
-    --color-dark-gray: 0, 0%, 50%;
-
-    --color-transparent: 0, 0%, 0%;
-    
-    /* COLORES DE MODO */
-    --color-box-item: 0, 0%, 100%;
-    --color-dark-mode: 240, 6%, 16%;
-    --color-bg: var( --color-white);
-    --color-text: var(--color-black);
-
-    /* TAMAÑOS DE FUENTE */
-    --ff-large: 4em;
-    --ff-medium-large: 2em;
-    --ff-medium: 1.25em;
-
-    /* VALOR BOX SHADOW */
-    --shadow: 0 0 0.75em hsl( var( --color-black), 0.25);
-
-    /* COLOR DE NAVBAR */
-    --nav-bg: hsl( var(--color-white), 0.75);
-    --bar-btn: hsl( var(--color-light-red), 0.75)
 }
 
-/* ATRIBUTOS PREESTABLECIDOS */
+/* MEDIDAS PREESTABLECIDAS DE TAMAÑOS DE FUENTE */
+body {
+    --ff-large: 4rem;
+    --ff-medium-large: 2rem;
+    --ff-medium: 1.25rem;
+}
+
+/* ------------------------------------------- */
+/* ------- ATRIBUTOS PREESTABLECIDOS --------- */
+/* ------------------------------------------- */
+body {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: var( --color-light-gray);
+    transition: background-color 0.5s, color 0.5s, fill 0.5s;
+}
+
+::selection {
+    background-color: var(--color-transparent-red);
+    color: var(--color-white);
+}
+
 #root {
     display: flex;
     justify-content: center;
 }
 
-::selection {
-    background-color: hsl( var(--color-light-red), 0.75);
-    color: hsl( var(--color-white), 1)
-}
-
-body {
-    background-color: hsl( 0, 0%, 90%, 1) ;
-    transition: background-color 0.5s, color 0.5s, fill 0.5s;
-}
-
 /* MODO OSCURO */
 body.dark-mode {
-    background-color: hsl( 240, 6%, 12%, 1);
-
-    --color-bg: var( --color-dark-mode);
-    --color-text: 0, 0%, 100%;
-    --color-box-item: 240, 6%, 20%;
-    --color-light-red: 353, 95%, 62%;
-    --color-light-red-focused: 353, 100%, 67.5%;
-    --color-dark-gray: 0, 0%, 75%;
-
-    --nav-bg: hsl( var(--color-dark-mode), 0.85);
-    --bar-btn: hsl( 353, 100%, 58%, 0.9)
-}
-
-body.body-overflow-y {
-    overflow-y: hidden;
+    background-color: var( --color-bluish-black);
 }
 
 body * {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    transition: background-color 0.5s, color 0.5s;
-    color: hsl( var( --color-text), 1);
-    fill: hsl( var( --color-text), 1);
+    color: var( --color-text);
+    fill: var( --color-text);
+    transition: background-color 0.5s, color 0.5s, fill 0.5s;
 }
 
 h1 {
@@ -124,20 +148,20 @@ h1 {
 
 h2 {
     font-size: var(--ff-medium-large);
-    color: hsl( var(--color-dark-gray), 1);
+    color: var(--color-gray);
     font-weight: 400;
 }
 
 h3 {
     font-size: var(--ff-medium-large);
     font-weight: 400;
-    color:hsl( var(--color-light-red), 1)
+    color: var(--color-red);
 }
 
 main {
     overflow: hidden;
     width: 100%;
-    margin-top: 5em;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
 }
@@ -150,6 +174,11 @@ section {
 
 section > h1 {
     text-align: center;
+}
+
+svg {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 iframe {
@@ -180,34 +209,25 @@ iframe {
     opacity: 1;
 }
 
+/* revisar */
 .url {
-    color: hsl( var( --color-light-red));
+    color: var( --color-red);
     text-decoration: underline;
-    gap: 0.5em;
+    gap: 0.5rem;
 }
 
-/* .icon {
-    width: 1em;
-    height: 1em;
-    margin: -0.125em 0.25em;
-    fill: hsl( var( --color-light-red));
-} */
-
 /* VISTA MÓVIL */
-@media only screen and (max-width: 500px) {
-    :root {
-        font-size: 16px;
-        --ff-large: 2.625rem;
-        --ff-medium-large: 1.125em;
-        --ff-medium: 1em;
+@media only screen and (max-width: 900px) {
+    body.body-overflow-y {
+        overflow-y: hidden;
     }
 
     section > h1 {
-        padding: 0 1em;
+        padding: 0 1rem;
     }
 
     section > h2 {
-        padding: 0 3em;
+        padding: 0 3rem;
     }
 
     .bar-button {
@@ -224,25 +244,34 @@ iframe {
     }
 
     .bar-button:active * {
-        color: hsl( var(--color-white), 1);
-        fill: hsl( var(--color-white), 1);
+        color: var(--color-white);
+        fill: var(--color-white);
         transform: scale(96%);
         transition: 0s;
     }
 }
 
 /* VISTA DE ESCRITORIO */
+@media only screen and (max-width: 900px) {
+    :root {
+        font-size: 16px;
+        --ff-large: 2.625rem;
+        --ff-medium-large: 1.125rem;
+        --ff-medium: 1rem;
+    }
+}
+
 @media only screen and (min-width: 500px) {
     button svg {
-        fill: hsl( var(--color-white), 1);
+        fill: var(--color-white);
     }
 
     section > h1 {
-        padding: 0 2em;
+        padding: 0 2rem;
     }
 
     section > h2 {
-        padding: 0 6em;
+        padding: 0 6rem;
     }
 
     .bar-button {
@@ -258,8 +287,8 @@ iframe {
     }
 
     .bar-button:hover * {
-        color: hsl( var(--color-white), 1);
-        fill: hsl( var(--color-white), 1);
+        color: var(--color-white);
+        fill: var(--color-white);
         transform: scale(96%);
     }
 }

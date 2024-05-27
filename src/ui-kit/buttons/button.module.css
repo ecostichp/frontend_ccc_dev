@@ -4,16 +4,16 @@
     align-items: center;
     gap: 1em;
     height: 3em;
-    background-color: hsl( var(--color-light-red), 1);
+    background-color: var( --color-red);
     border: none;
     padding: 1em 1.5em;
     border-radius: 2em;
-    color: hsl( var(--color-white), 1);
+    color: var(--color-white);
     transition: transform 0.3s, background-color 0.3s;
 }
 
 .button * {
-    fill: hsl( var(--color-white), 1);
+    fill: var(--color-white);
 }
 
 .button svg {
@@ -27,13 +27,13 @@
     flex-direction: row;
     align-items: center;
     gap: 1em;
-    color: hsl( var(--color-white), 1);
+    color: var(--color-white);
     transition: transform 0.3s;
 }
 
 
 .button:hover {
-    background-color: hsl( var(--color-light-red-focused), 1);
+    background-color: var(--color-light-red);
 }
 
 .button:hover > * {
