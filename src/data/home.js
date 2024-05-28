@@ -1,7 +1,7 @@
 export const cardsInfo = [
     {
         src: "csl.jpg",
-        title: "¿Quiénes somos?",
+        title: "Quiénes somos",
         description: "Somos una ferretería comprometida con ofrecer a nuestros clientes una amplia gama de productos y servicios para satisfacer sus necesidades en diversos ámbitos.",
         button: "Saber más",
         link: "/sobre-nosotros"
