@@ -1,13 +1,39 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
-    <title>La Casa Del Carpintero</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+        <title>La Casa Del Carpintero</title>
+    </head>
+    <body onload="setTransistions()">
+        
+        <div id="root"></div>
+
+        <!-- Script para visualización en modo claro u oscuro -->
+        <script>
+            // Documento body
+            const bodyElement = document.body;
+
+            // Establecer en modo oscuro basado en las preferencias del usuario
+            const savedPreference = localStorage.getItem("darkmode");
+                if (
+                    // Preferencia predeterminada es verdadera o...
+                    savedPreference === "true" || (
+                    // No hay preferencia predeterminada y la configuración del usuario está en modo oscuro
+                    !savedPreference && window.matchMedia("(prefers-color-scheme: dark)").matches)
+                ) {
+                    // Añadir clase al elemento body
+                    bodyElement.classList.add("dark-mode");
+                }
+
+            // Activación de transiciones de cambios de color con modo oscuro/claro en el documento
+            const setTransistions = () => {
+                bodyElement.classList.add("smooth-transition")
+            }
+        </script>
+
+        <!-- Módulo de React.js -->
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>
