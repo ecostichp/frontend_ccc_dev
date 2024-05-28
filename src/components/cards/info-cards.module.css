@@ -2,6 +2,7 @@
     margin: 3em 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2em;
 }
 
@@ -14,10 +15,11 @@
     margin-right: 4em;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 750px) {
     .card:nth-child(2n),
     .card:nth-child(2n+1) {
         flex-direction: column;
         margin: 0 1em;
+        max-width: 500px;
     }
 }

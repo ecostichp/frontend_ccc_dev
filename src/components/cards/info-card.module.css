@@ -1,19 +1,18 @@
 .container {
-    aspect-ratio: calc(100%-4em)/(calc(100%-4em))2;
-    width: calc(100%-4em);
     display: flex;
     box-shadow: var( --shadow);
     overflow: hidden;
     background-color: var(--color-box-item);
+    width: 100%;
 }
 
 .infoCard {
-    width: calc(50% + 4em);
+    width: 55%;
     aspect-ratio: 3/2;
 }
 
 .description {
-    width: calc(50% - 4em);
+    width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,22 +27,35 @@
     align-items: center;
 }
 
+.title {
+    font-size: clamp(6px, 3vw, 32px);
+}
+
 .description p {
+    margin-top: 2rem;
     text-align: center;
-    font-size: var(--ff-400);
+    font-size: clamp(6px, 1.8vw, 20px);
     font-weight: 300;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 750px) {
     .container {
-        width: calc(100%-2em);
+        width: calc(100% - 2rem);
     }
 
     .infoCard {
         width: 100%;
     }
 
+    .title {
+        font-size: var( --ff-600);
+    }
+
     .description {
         width: 100%;
+    }
+
+    .description p {
+        font-size:  var( --ff-400);
     }
 }
