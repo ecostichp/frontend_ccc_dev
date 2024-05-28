@@ -13,6 +13,11 @@
     text-align: center;
 }
 
+.address {
+    font-size: clamp(16px, 2vw, 32px);
+    font-weight: 500;
+}
+
 .contact {
     display: flex;
     flex-direction: column;
@@ -33,16 +38,28 @@
     width: 100%;
     aspect-ratio: 1;
     outline: none;
+    align-self: first baseline;
 }
 
 .map:focus {
     outline: none;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
+    .address {
+        font-size: var( --ff-300);
+        margin: 0 6rem;
+    }
+    
     .info {
         display: flex;
         flex-direction: column;
         margin: 2em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .address {
+        margin: 0 1rem;
     }
 }

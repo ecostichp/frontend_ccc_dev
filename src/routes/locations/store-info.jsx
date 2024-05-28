@@ -15,7 +15,7 @@ const StoreInfo = () => {
             </section>
             <section className={style.info}>
                 <div className={style.details}>
-                    <h2>{location.address}</h2>
+                    <p className={style.address}>{location.address}</p>
                     <div  className={style.contact}>
                         <p>{location.businessHours}</p>
                         <div>
