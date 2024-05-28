@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import style from './button.module.css';
+import style from './link-button.module.css';
 
 const LinkButton = ({icon, text, link, target= "_self"}) => {
 
