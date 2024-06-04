@@ -1,9 +1,0 @@
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5em;
-    max-height: 4em;
-    margin-top: 1em;
-    padding: 0.5em;
-}
