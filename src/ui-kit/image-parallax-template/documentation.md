@@ -1,4 +1,4 @@
-# Plantilla de imagen con efecto `parallax-scroll`
+# Plantilla de imagen con efecto *parallax-scroll*
 
 **Importante**: La imagen que el componente renderizará tendrá una altura del 150% de la altura de éste. Leer `Parámetros de la imagen` para más información.
 
@@ -35,7 +35,7 @@ Para poder lograr el efecto de paralaje vertical de la imagen el componente rend
 |-----------------------|---------------------|---------------------|
 | 300px                 | 450px               | 150px               |
 | 8rem                  | 12rem               | 4rem                |
-| 100vh                 | 150vh               | 50vh                |
+| 10vh                  | 15vh                | 5vh                 |
 
 Esto significa que altura declarada en la clase CSS asignada al componente es propia de éste y la imagen que renderizará tendrá una altura del 150% de la altura de éste. Así, por ejemplo, si se requiere mostrar una imagen de 600px de longitud × 450px de altura, el componente deberá medir 600px × 300px. En cambio, si se desera que el componente tenga una dimensión de 600px de longitud × 450px de altura, la imagen provista en el argumento `src` deberá tener una dimensión de 600px de longitud × 675px de altura.
 

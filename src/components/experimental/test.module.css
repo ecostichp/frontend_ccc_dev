@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var( --color-transparent-red);
+    transition: transform 0.3s;
+}
+
+.small {
+    width: 5rem;
+    height: 5rem;
+}
+
+.big {
+    width: 10rem;
+    height: 10rem;
+}

@@ -42,6 +42,13 @@ const VerticalParallaxImg = ({ src, className }) => {
             // Proporción de altura no ocupada por el componente dentro de la ventana del navegador
             const remVH = windowHeight - divHeight
 
+            console.log("imgHeight", imgHeight);
+            console.log("imgRemHeight", imgRemHeight);
+            console.log("divHeight", divHeight);
+            console.log("windowHeight", windowHeight);
+            console.log("imgHeight", imgHeight);
+            console.log("imgHeight", imgHeight);
+
             // Evaluación de la altura de la imagen con la altura de la ventana del navegador
             if (imgHeight * 1.25 <= windowHeight) {
                 // Se establece la velocidad ideal de desplazamiento vertical de la imagen
@@ -132,7 +139,6 @@ const VerticalParallaxImg = ({ src, className }) => {
 
                         // Altura de la ventana del navegador
                         setWindowHeight(vhRef.current.offsetHeight + 1);
-                        console.log("vh", vhRef.current.offsetHeight + 1);
                     }
                 }
             )
