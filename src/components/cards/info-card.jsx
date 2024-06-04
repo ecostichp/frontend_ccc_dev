@@ -1,12 +1,12 @@
 import LinkButton from "../../ui-kit/buttons/link-button";
-import ImageParallaxTemplate from "../../ui-kit/image-parallax-template/image-parallax-template";
+import VerticalParallaxImg from "../../ui-kit/image-parallax-template/vertical-parallax-img";
 import style from './info-card.module.css';
 
 const InfoCard = ({ src, title, description, button, className, link }) => {
 
     return (
         <div className={`${style.container} ${className}`}>
-            <ImageParallaxTemplate src={src} className={style.infoCard} />
+            <VerticalParallaxImg src={src} className={style.infoCard} />
             <div className={style.description}>
                 <div className={style.info}>
                     <h2 className={`${style.title} fc-red fw-400`}>{title}</h2>
