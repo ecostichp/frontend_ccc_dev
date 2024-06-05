@@ -5,7 +5,7 @@ import SidebarDisplayContext from "../../contexts/sidebar-display"
 import NavButton from "../../ui-kit/buttons/nav-button"
 import IconMenu from "../../ui-kit/icons/icon-menu"
 import IconNightMode from "../../ui-kit/icons/icon-night-mode"
-import IconPhone from "../../ui-kit/icons/icon-phone"
+import IconSupport from "../../ui-kit/icons/icon-support"
 import style from "./navbar.module.css"
 
 const Navbar = () => {
@@ -29,7 +29,7 @@ const Navbar = () => {
                 <NavButton content={"Sobre nosotros"} link={"/sobre-nosotros"} />
             </div>
             <div className={style.quickAccess}>
-                <NavButton content={<IconPhone />} link={"/contacto"} />
+                <NavButton content={<IconSupport />} link={"/contacto"} />
                 <NavButton content={<IconNightMode />} func={() => setDarkMode(!darkMode)} />
             </div>
         </nav>
