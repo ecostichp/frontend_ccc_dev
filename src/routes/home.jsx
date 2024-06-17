@@ -19,7 +19,7 @@ const Home = () => {
             <InfoCards />
             <section className={style.bottom}>
                 <LogoMain />
-                <h1>Somos tu mejor opción en ferretería y carpintería.</h1>
+                <h1>Somos tu mejor opción en ferretería y maderería.</h1>
                 <LinkButton text={"Cotiza con nosotros"} link={"/contacto"} />
             </section>
         </main>

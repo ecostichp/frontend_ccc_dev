@@ -4,7 +4,7 @@ import SidebarDisplayContext from "../../contexts/sidebar-display";
 import NavButton from "../../ui-kit/buttons/nav-button";
 import SideButton from "../../ui-kit/buttons/side-button";
 import IconNightMode from "../../ui-kit/icons/icon-night-mode";
-import IconPhone from "../../ui-kit/icons/icon-phone";
+import IconSupport from "../../ui-kit/icons/icon-support";
 import style from './sidebar.module.css';
 
 const SideBar = () => {
@@ -16,7 +16,7 @@ const SideBar = () => {
         <aside className={`${style.container} ${display}`}>
             <div className={style.options}>
                 <NavButton content={<IconNightMode />} func={() => setDarkMode(!darkMode)} />
-                <NavButton content={<IconPhone />} link={"/contacto"} func={() => setSidebarDisplay(false)} />
+                <NavButton content={<IconSupport />} link={"/contacto"} func={() => setSidebarDisplay(false)} />
             </div>
             <div className={style.options}>
                 <SideButton content={"Inicio"} link={"/"} />
