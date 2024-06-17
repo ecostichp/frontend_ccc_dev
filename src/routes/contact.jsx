@@ -42,6 +42,10 @@ const Contact = () => {
                                     <LinkButton icon={<IconCellphone />} text={location.phones[1]} link={`tel:${location.phones[1]}`} />
                                     <LinkButton icon={<IconWhatsApp />} text={"WhatsApp"} link={location.whatsappURL} target="_blank" />
                                 </div>
+                                <iframe className={style.map}
+                                    src={location.map}
+                                    loading="lazy"
+                                />
                             </div>
                         )
                     )

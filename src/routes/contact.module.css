@@ -26,6 +26,12 @@
     gap: 1em;
 }
 
+.map {
+    aspect-ratio: 1;
+    margin-top: 2rem;
+    width: 50%;
+}
+
 @media only screen and (max-width: 750px) {
     .container {
         margin: 4em 1em;
@@ -33,5 +39,9 @@
 
     .buttons {
         flex-direction: column;
+    }
+
+    .map {
+        width: 90%;
     }
 }
