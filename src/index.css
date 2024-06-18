@@ -175,7 +175,8 @@ body {
 
 #root {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* MODO OSCURO */
@@ -189,6 +190,29 @@ body * {
     color: var( --color-text);
     fill: var( --color-text);
     transition: background-color 0.5s, color 0.5s, fill 0.5s;
+}
+
+/* Cambios para la leyenda "Página en construcción" */
+.temp-legend {
+    z-index: 9999;
+    height: 2rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    color: var( --color-white);
+    
+    fill: var( --color-white);
+    background-color: var( --color-transparent-red);
+    backdrop-filter: blur(4px);
+}
+
+.temp-legend * {
+    aspect-ratio: 1;
+    height: 80%;
+    fill: #FFFFFF;
 }
 
 .smooth-transition,
