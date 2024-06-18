@@ -1,7 +1,7 @@
 .navbar {
     z-index: 1000;
     position: fixed;
-    top: 0;
+    /* top: 0; */
     left: 0;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -11,6 +11,9 @@
     background-color: var(--nav-bg);
     backdrop-filter: blur(6px);
     box-shadow: var( --shadow);
+    
+    /* Cambios para la leyenda "Página en construcción" (Descomentar el atributo 'top' de arriba) */
+    top: 2rem;
 }
 
 .logo {

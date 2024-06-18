@@ -4,6 +4,7 @@ import Navbar from "./components/bars/navbar";
 import SideBar from "./components/bars/sidebar";
 import DarkModeContext from "./contexts/dark-mode";
 import SidebarDisplayContext from "./contexts/sidebar-display";
+import IconTools from "./ui-kit/icons/icon-tools";
 import PageContainer from "./ui-kit/page-container";
 
 const App = () => {
@@ -63,6 +64,12 @@ const App = () => {
 
     return (
         <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+            {/* Cambios para la leyenda "Página en construcción" */}
+            <div className="temp-legend">
+                <IconTools />
+                Página en construcción
+                <IconTools />
+            </div>
             <SidebarDisplayContext.Provider value={{ sidebarDisplay, setSidebarDisplay }}>
                 <PageContainer class="page-container">
                 <Navbar />
